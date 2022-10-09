@@ -1,13 +1,17 @@
-const sumDigits = require('.').default
+const invert = require('.')
 
 test('Test 1', () => {
-  expect(sumDigits(10)).toBe(1)
+  expect(invert([1, 2, 3, 4, 5])).toEqual([-1, -2, -3, -4, -5])
 })
 
 test('Test 2', () => {
-  expect(sumDigits(99)).toBe(18)
+  expect(invert([1, -2, 3, -4, 5])).toEqual([-1, 2, -3, 4, -5])
 })
 
 test('Test 3', () => {
-  expect(sumDigits(-32)).toBe(5)
+  expect(invert([])).toEqual([])
+})
+
+test('Test 4', () => {
+  expect(invert([0])).toEqual([0])
 })
